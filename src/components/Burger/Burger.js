@@ -5,11 +5,11 @@ import BurgerIngredient from './BurgerIngredient/BurgerIngredient';
 
 const burger = (props) => {
     const keys = Object.keys(props.ingredients);
-    console.log(keys);
+    // console.log(keys);
     
     let transformedIngredients = keys.map(igKey => {             
             const newArray =[...Array(props.ingredients[igKey])];
-            console.log("key = ",igKey,", props.ingredients[igKey] =",props.ingredients[igKey],newArray);
+            // console.log("key = ",igKey,", props.ingredients[igKey] =",props.ingredients[igKey],newArray);
             return newArray.map((_, i) => {
                 return <BurgerIngredient key={igKey+i} type ={igKey} />
             }); //[,]
@@ -17,7 +17,7 @@ const burger = (props) => {
         .reduce((arr,el) => {
             return arr.concat(el)
         }, []);
-    console.log(transformedIngredients);
+    // console.log(transformedIngredients);
     if (transformedIngredients.length ==0) {
         transformedIngredients = <p>Please start adding ingredients</p>;
     }
